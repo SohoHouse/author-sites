@@ -1,8 +1,8 @@
 # Author::Sites
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/author/sites`. To experiment with that code, run `bin/console` for an interactive prompt.
+If you wanna' write a good book, you've gotta start with a site?
 
-TODO: Delete this and the text above, and describe your gem
+This a gem designed to make including extra sites for author easy
 
 ## Installation
 
@@ -22,18 +22,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use in a fresh Alchemy installation, include the following in your `config/application.rb`
 
-## Development
+```ruby
+module Author
+  class Application < Rails::Application
+    include Author::Sites::Application
+  end
+end
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then in your new site engine, include the following in your `lib/<engine_name>/engine.rb`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+module TheNed
+  class Engine < ::Rails::Engine
+    include Author::Sites.engine
+  end
+end
+```
 
-## Contributing
+## TODO
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/author-sites. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+  - Include generator for building new sites
 
 ## License
 
