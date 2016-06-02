@@ -5,6 +5,7 @@ require "author/sites/loader"
 require "author/sites/alchemy/extensions"
 require "author/sites/engine"
 require "author/sites/application"
+require "author/sites/controller"
 
 module Author
   module Sites
@@ -20,6 +21,10 @@ module Author
 
     def application
       Author::Sites::Application
+    end
+
+    def controller
+      Author::Sites::Controller
     end
 
     def sites
