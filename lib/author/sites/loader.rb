@@ -7,6 +7,10 @@ module Author
         @path = path
       end
 
+      def namespace
+        name.classify
+      end
+
       def key
         name.to_sym
       end
