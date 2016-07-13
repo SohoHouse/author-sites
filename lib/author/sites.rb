@@ -6,6 +6,7 @@ require "author/sites/alchemy/extensions"
 require "author/sites/engine"
 require "author/sites/application"
 require "author/sites/controller"
+require "author/sites/class_loader"
 
 module Author
   module Sites
