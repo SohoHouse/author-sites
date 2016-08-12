@@ -6,7 +6,7 @@ module Author
       included do
         config.before_initialize do
           Rails.application.config.sites[loader.key] = loader
-          Rails.application.config.assets.precompile << /#{loader.key.to_s}(.*)\/*.(gif|png|jpg)/
+          Rails.application.config.assets.precompile << /#{loader.key.to_s}(.*)\/*.(gif|png|jpg|ico)/
         end
       end
 
